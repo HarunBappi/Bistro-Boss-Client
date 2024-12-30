@@ -6,7 +6,6 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from "../../../../Components/SectionTitle/SectionTitle";
-import quotation from '../../../../assets/icon/quotation.png';
 export default function Testimonial() {
   const [reviews, setReviews] = useState([]);
 
@@ -28,8 +27,10 @@ export default function Testimonial() {
           <SwiperSlide key={review._id}>
             <div className="w-10/12 flex flex-col items-center mx-auto gap-2">
               <Rating className="text-center" style={{ maxWidth: 180 }} value={review.rating} readOnly />
-              <img src={quotation} alt="" />
-              <p>{review.details}</p>
+              <div className="text-7xl">
+              <i class="fa-solid fa-quote-left"></i>
+              </div>
+              <p className="text-center">{review.details}</p>
               <h3 className="text-3xl text-orange-400">
                 {review.name}
               </h3>

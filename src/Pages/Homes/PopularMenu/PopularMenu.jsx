@@ -27,6 +27,9 @@ export default function PopularMenu() {
             item = {item}
             ></MenuItem>)
         }
+       <div className="flex justify-end -mr-10 mt-2">
+       <button className="btn btn-outline border-0 border-b-4">View Full Menu</button>
+       </div>
       </div>
     </section>
   )
