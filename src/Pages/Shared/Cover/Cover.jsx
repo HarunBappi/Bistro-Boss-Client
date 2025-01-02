@@ -8,7 +8,7 @@ export default function Cover({ img, title,desc }) {
       bgImageAlt="the dog"
       strength={-200}
     >
-      <div className="hero h-[600px]">
+      <div className="hero h-[550px]">
         <div className="hero-overlay"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="w-[750px] bg-slate-900 opacity-70 px-10 py-6">
