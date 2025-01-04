@@ -1,9 +1,12 @@
 import { useContext } from "react";
+import { FaShoppingCart } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import useCart from "../../../Hooks/useCart";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 export default function Navbar() {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart()
   const handleLogout = () => {
     logOut()
       .then(() => {})
@@ -12,9 +15,9 @@ export default function Navbar() {
       });
   };
   const navItems = (
-    <>
+    <div className="flex items-center"> 
       <li>
-        <NavLink to="/">Home</NavLink>{" "}
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
         <NavLink to="/menu">Our Menu</NavLink>
@@ -23,10 +26,10 @@ export default function Navbar() {
         <NavLink to="/order/salad">Order Food</NavLink>
       </li>
       <li>
-        <Link>
+        <Link to="/dashboard/cart">
           <button className="btn">
-            Inbox
-            <div className="badge badge-secondary">+99</div>
+            <FaShoppingCart></FaShoppingCart>
+            <div className="badge badge-secondary">+{cart.length}</div>
           </button>
         </Link>
       </li>
@@ -44,7 +47,7 @@ export default function Navbar() {
           </li>
         </>
       )}
-    </>
+    </div>
   );
   return (
     <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
