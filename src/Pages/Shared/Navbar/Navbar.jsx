@@ -1,11 +1,49 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 export default function Navbar() {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const navItems = (
     <>
-      <li><NavLink to="/">Home</NavLink> </li>
-      <li><NavLink to="/menu">Our Menu</NavLink></li>
-      <li><NavLink to="/order/salad">Order Food</NavLink></li>
+      <li>
+        <NavLink to="/">Home</NavLink>{" "}
+      </li>
+      <li>
+        <NavLink to="/menu">Our Menu</NavLink>
+      </li>
+      <li>
+        <NavLink to="/order/salad">Order Food</NavLink>
+      </li>
+      <li>
+        <Link>
+          <button className="btn">
+            Inbox
+            <div className="badge badge-secondary">+99</div>
+          </button>
+        </Link>
+      </li>
+      {user ? (
+        <>
+          {/* <span>{user?.displayName}</span> */}
+          <button onClick={handleLogout} className="btn btn-ghost uppercase">
+            Logout
+          </button>
+        </>
+      ) : (
+        <>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (

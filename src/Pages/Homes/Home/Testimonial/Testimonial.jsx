@@ -28,7 +28,7 @@ export default function Testimonial() {
             <div className="w-10/12 flex flex-col items-center mx-auto gap-2">
               <Rating className="text-center" style={{ maxWidth: 180 }} value={review.rating} readOnly />
               <div className="text-7xl">
-              <i class="fa-solid fa-quote-left"></i>
+              <i className="fa-solid fa-quote-left"></i>
               </div>
               <p className="text-center">{review.details}</p>
               <h3 className="text-3xl text-orange-400">
