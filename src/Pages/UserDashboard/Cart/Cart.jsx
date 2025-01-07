@@ -38,7 +38,7 @@ export default function Cart() {
     <div>
       <div className="flex justify-evenly items-center mb-8">
         <h2 className="text-4xl">Items: {cart.length}</h2>
-        <h2 className="text-4xl">Total Price: {totalPrice}</h2>
+        <h2 className="text-4xl">Total Price: {parseFloat(totalPrice).toFixed(2)}</h2>
         <button className="btn">pay</button>
       </div>
       <div className="overflow-x-auto">

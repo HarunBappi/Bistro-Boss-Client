@@ -7,6 +7,7 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 export default function Login() {
@@ -73,6 +74,7 @@ export default function Login() {
           </p>
         </div>
         <div className="card bg-base-100 w-3/4 shadow-2xl">
+        <SocialLogin></SocialLogin>
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -125,7 +127,7 @@ export default function Login() {
               />
             </div>
           </form>
-          <p>
+          <p className="px-8">
             <small>
               New Here? <Link to="/signup">Create an Account</Link>
             </small>
