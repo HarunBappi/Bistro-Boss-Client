@@ -17,7 +17,7 @@ export default function Login() {
   const location = useLocation()
 
   const from = location.state?.from?.pathname || "/"
-  console.log("logged in path name", location.state)
+  // console.log("logged in path name", location.state)
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
