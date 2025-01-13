@@ -1,5 +1,5 @@
-import { FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
-import { MdReviews } from "react-icons/md";
+import { FaBook, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
+import { MdPayment, MdReviews } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
@@ -52,9 +52,9 @@ export default function Dashboard() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/reservation">
+            <NavLink to="/dashboard/paymentHistory">
               {" "}
-              <FaCalendar></FaCalendar> Reservation{" "}
+              <MdPayment></MdPayment> Payment History{" "}
             </NavLink>
           </li>
           <li>

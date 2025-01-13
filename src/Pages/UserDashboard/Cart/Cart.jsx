@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useCart from "../../../Hooks/useCart";
@@ -39,7 +40,11 @@ export default function Cart() {
       <div className="flex justify-evenly items-center mb-8">
         <h2 className="text-4xl">Items: {cart.length}</h2>
         <h2 className="text-4xl">Total Price: {parseFloat(totalPrice).toFixed(2)}</h2>
-        <button className="btn">pay</button>
+       {
+        cart.length ? <Link to='/dashboard/payment'>
+        <button className="btn btn-primary">pay</button>
+        </Link> : <button disabled className="btn btn-primary">pay</button>
+       }
       </div>
       <div className="overflow-x-auto">
         <table className="table">
