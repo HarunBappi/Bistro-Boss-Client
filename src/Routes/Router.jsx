@@ -8,15 +8,16 @@ import Menu from "../Pages/Menu/Menu";
 import Order from "../Pages/Order/Order/Order";
 import SignUp from "../Pages/SignUp/SignUp";
 import AddItems from "../Pages/UserDashboard/AddItems/AddItems";
+import AdminHome from "../Pages/UserDashboard/AdminHome/AdminHome";
 import AllUsers from "../Pages/UserDashboard/AllUsers/AllUsers";
 import Cart from "../Pages/UserDashboard/Cart/Cart";
 import ManageItems from "../Pages/UserDashboard/ManageItems/ManageItems";
 import Payment from "../Pages/UserDashboard/Payment/Payment";
 import PaymentHistory from "../Pages/UserDashboard/PaymentHistory/PaymentHistory";
 import UpdateItem from "../Pages/UserDashboard/UpdateItem/UpdateItem";
+import UserHome from "../Pages/UserDashboard/userHome/userHome";
 import AdminRoute from "./AdminRoute";
 import PrivateRoute from './PrivateRoute';
-
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -55,6 +56,10 @@ const Router = createBrowserRouter([
         element: <Cart></Cart>
       },
       {
+        path:'userHome',
+        element:<UserHome></UserHome>
+      },
+      {
         path:"payment",
         element:<Payment></Payment>
       },
@@ -70,6 +75,10 @@ const Router = createBrowserRouter([
       {
         path:"manageItems",
         element:<AdminRoute><ManageItems></ManageItems></AdminRoute>
+      },
+      {
+        path:'adminHome',
+        element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
       },
       {
         path:'updateItem/:id',
